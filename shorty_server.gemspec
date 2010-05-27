@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
      "lib/shorty/ui/views/layout.haml",
      "lib/shorty/ui/views/show.haml",
      "lib/shorty/ui/views/stylesheet.sass",
+     "shorty_server.gemspec",
      "spec/shorty_server_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -54,23 +55,26 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<dm-core>, [">= 0"])
-      s.add_runtime_dependency(%q<dm-validations>, [">= 0"])
-      s.add_runtime_dependency(%q<anybase>, [">= 0"])
-      s.add_runtime_dependency(%q<sinatra>, [">= 0"])
+      s.add_runtime_dependency(%q<dm-core>, [">= 0.10.2"])
+      s.add_runtime_dependency(%q<dm-validations>, [">= 0.10.2"])
+      s.add_runtime_dependency(%q<anybase>, [">= 0.0.9"])
+      s.add_runtime_dependency(%q<sinatra>, [">= 1.0"])
+      s.add_runtime_dependency(%q<haml>, [">= 3.0.4"])
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
-      s.add_dependency(%q<dm-core>, [">= 0"])
-      s.add_dependency(%q<dm-validations>, [">= 0"])
-      s.add_dependency(%q<anybase>, [">= 0"])
-      s.add_dependency(%q<sinatra>, [">= 0"])
+      s.add_dependency(%q<dm-core>, [">= 0.10.2"])
+      s.add_dependency(%q<dm-validations>, [">= 0.10.2"])
+      s.add_dependency(%q<anybase>, [">= 0.0.9"])
+      s.add_dependency(%q<sinatra>, [">= 1.0"])
+      s.add_dependency(%q<haml>, [">= 3.0.4"])
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
     end
   else
-    s.add_dependency(%q<dm-core>, [">= 0"])
-    s.add_dependency(%q<dm-validations>, [">= 0"])
-    s.add_dependency(%q<anybase>, [">= 0"])
-    s.add_dependency(%q<sinatra>, [">= 0"])
+    s.add_dependency(%q<dm-core>, [">= 0.10.2"])
+    s.add_dependency(%q<dm-validations>, [">= 0.10.2"])
+    s.add_dependency(%q<anybase>, [">= 0.0.9"])
+    s.add_dependency(%q<sinatra>, [">= 1.0"])
+    s.add_dependency(%q<haml>, [">= 3.0.4"])
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
   end
 end

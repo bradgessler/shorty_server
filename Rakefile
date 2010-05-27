@@ -10,10 +10,11 @@ begin
     gem.email = "brad@bradgessler.com"
     gem.homepage = "http://github.com/bradgessler/shorty_server"
     gem.authors = ["Brad Gessler"]
-    gem.add_dependency 'dm-core'
-    gem.add_dependency 'dm-validations'
-    gem.add_dependency 'anybase'
-    gem.add_dependency 'sinatra'
+    gem.add_dependency 'dm-core',         '>= 0.10.2'
+    gem.add_dependency 'dm-validations',  '>= 0.10.2'
+    gem.add_dependency 'anybase',         '>= 0.0.9'
+    gem.add_dependency 'sinatra',         '>= 1.0'
+    gem.add_dependency 'haml',            '>= 3.0.4'
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end

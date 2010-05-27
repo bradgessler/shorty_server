@@ -1,5 +1,6 @@
-require 'haml'
 require 'sinatra'
+require 'haml'
+require 'sass'
 
 module Shorty
   class UI < Sinatra::Base

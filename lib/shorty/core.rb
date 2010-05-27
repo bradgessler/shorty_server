@@ -1,17 +1,26 @@
 require 'sinatra'
+require 'dm-core'
 
 module Shorty
   class Core < Sinatra::Base
+    attr_accessor :database_url
+    
+    def initialize(&block)
+      yield self
+      DataMapper.setup(:default, database_url)
+      super
+    end
+    
     helpers do
       def url(path)
         "http://#{host_name}/#{path}"
       end
-    
+      
       def host_name
         env['HTTP_HOST']
       end
     end
-
+    
     # If you PUT then you are defining the path!
     put '/:path' do
       halt [ 409, "#{url(params[:path])} has been taken" ] if Url.get(params[:path])

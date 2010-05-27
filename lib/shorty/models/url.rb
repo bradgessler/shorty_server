@@ -1,9 +1,6 @@
-require 'dm-core'         # sudo gem install dm-core
-require 'dm-validations'  # sudo gem install dm-more
+require 'dm-core'
+require 'dm-validations'
 require 'anybase'
-
-# Database settings. The DATABASE_URL stuff is used by Heroku
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "mysql://root@localhost/shorty")
 
 module Shorty
   class Url
