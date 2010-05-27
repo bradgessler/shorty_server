@@ -1,0 +1,26 @@
+%form#shortener{:method=>'post',:action=>'/'}
+  %input{:type=>'hidden',:name=>'_method',:value=>'put'}
+  ="http://#{@env['HTTP_HOST']}/"
+  %input#path.faux{:type=>'text',:name=>'path',:value=>@url.path,:tabindex=>2,:size=>8}>
+  &#10132;
+  %input#url{:type=>'text',:name=>'url',:value=>@url.url,:tabindex=>1,:size=>35}
+  %input#shorten{:type=>'submit',:value=>'Shorten',:tabindex=>3}
+#status
+:javascript
+  (function(){
+    $('#shortener').submit(function(e){
+      $.shorty.shorten($('#url').val(), $('#path').val(), {
+        success: function(url){
+          $('#status').text('Created ' + url);
+          $.shorty.getKey(function(newKey){
+            $('#path').val(newKey);
+            $('#url').val('');
+          });
+        },
+        error: function(error){
+          $('#status').text(error);
+        }
+      });
+      return false;
+    });
+  })();

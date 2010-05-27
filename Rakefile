@@ -5,11 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "shorty_server"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Shorten URLs}
+    gem.description = %Q{A small URL shortening server with a nice, clean, RESTful API.}
     gem.email = "brad@bradgessler.com"
     gem.homepage = "http://github.com/bradgessler/shorty_server"
     gem.authors = ["Brad Gessler"]
+    gem.add_dependency 'dm-core'
+    gem.add_dependency 'dm-validations'
+    gem.add_dependency 'anybase'
+    gem.add_dependency 'sinatra'
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
